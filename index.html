@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Girls Choice - Kiran Ramzan">
+  <meta name="theme-color" content="#ff3f91">
+
+  <title>Girls Choice | Kiran Ramzan</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff7fb;
+      color: #39152c;
+      overflow-x: hidden;
+    }
+
+    /* ==============================
+       ANIMATED BACKGROUND
+    ============================== */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -10;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(3px);
+      animation: orbMove 9s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 54, 143, .12);
+      top: 5%;
+      left: -110px;
+    }
+
+    .orb.two {
+      width: 380px;
+      height: 380px;
+      background: rgba(127, 53, 255, .10);
+      top: 40%;
+      right: -150px;
+      animation-delay: 2s;
+    }
+
+    .orb.three {
+      width: 230px;
+      height: 230px;
+      background: rgba(255, 165, 210, .16);
+      bottom: -50px;
+      left: 15%;
+      animation-delay: 4s;
+    }
+
+    @keyframes orbMove {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(25px, -35px);
+      }
+    }
+
+    /* ==============================
+       NAVBAR
+    ============================== */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 16px 7%;
+
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(255,60,140,.12);
+
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #ff3c8d;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #843cff;
+    }
+
+    .nav-shop {
+      color: white;
+      text-decoration: none;
+
+      padding: 11px 20px;
+
+      border-radius: 50px;
+
+      font-size: 14px;
+      font-weight: 800;
+
+      background: linear-gradient(
+        135deg,
+        #ff3f91,
+        #8c3cff
+      );
+
+      box-shadow:
+        0 8px 25px rgba(140,60,255,.20);
+
+      transition: .3s;
+    }
+
+    .nav-shop:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+      min-height: 100vh;
+
+      padding: 150px 7% 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      position: relative;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 950px;
+
+      animation: heroIn 1s ease forwards;
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Top badge */
+
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 9px 18px;
+
+      background: #ffe4f0;
+      color: #df2e7c;
+
+      border-radius: 50px;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      margin-bottom: 22px;
+
+      animation: badgePulse 2.5s infinite;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255,60,140,.16);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(255,60,140,0);
+      }
+    }
+
+    /* Main title */
+
+    .hero h1 {
+      font-size: clamp(52px, 10vw, 105px);
+
+      line-height: .92;
+
+      letter-spacing: -6px;
+
+      font-weight: 950;
+
+      margin-bottom: 24px;
+
+      background: linear-gradient(
+        135deg,
+        #ff2d87,
+        #b23cff,
+        #693cff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from {
+        filter:
+          drop-shadow(
+            0 5px 15px rgba(255,45,135,.08)
+          );
+      }
+
+      to {
+        filter:
+          drop-shadow(
+            0 8px 30px rgba(178,60,255,.20)
+          );
+      }
+    }
+
+    /* ==============================
+       KIRAN RAMZAN
+    ============================== */
+
+    .name-area {
+      display: flex;
+      justify-content: center;
+
+      margin: 5px 0 28px;
+    }
+
+    .name-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 10px 22px 10px 11px;
+
+      border-radius: 60px;
+
+      background: rgba(255,255,255,.88);
+
+      border: 1px solid rgba(255,70,150,.25);
+
+      box-shadow:
+        0 12px 40px rgba(255,60,145,.14),
+        inset 0 0 20px rgba(255,255,255,.9);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      animation:
+        nameEnter 1s cubic-bezier(.2,.8,.3,1.3) .5s both,
+        nameFloat 4s ease-in-out 1.5s infinite;
+    }
+
+    @keyframes nameEnter {
+      from {
+        opacity: 0;
+        transform: scale(.65) translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes nameFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .profile-icon {
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        135deg,
+        #ff4b99,
+        #8d3cff
+      );
+
+      font-size: 21px;
+
+      box-shadow:
+        0 7px 22px rgba(255,60,145,.30);
+
+      animation: iconPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes iconPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .person-name {
+      font-size: 18px;
+      font-weight: 900;
+
+      background: linear-gradient(
+        90deg,
+        #e83286,
+        #843cff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .sparkle {
+      font-size: 17px;
+      color: #ff4196;
+
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+
+    .sparkle:last-child {
+      color: #843cff;
+      animation-delay: .6s;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: .3;
+        transform: scale(.7) rotate(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(180deg);
+      }
+    }
+
+    /* ==============================
+       DESCRIPTION
+    ============================== */
+
+    .hero-description {
+      max-width: 650px;
+
+      margin: auto;
+
+      color: #755e6c;
+
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+
+    .buttons {
+      margin-top: 35px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    .button {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 16px 27px;
+
+      border-radius: 50px;
+
+      text-decoration: none;
+
+      font-weight: 900;
+
+      transition: .3s;
+    }
+
+    .shop-button {
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        #ff3190,
+        #923cff
+      );
+
+      box-shadow:
+        0 15px 35px rgba(255,50,145,.28);
+
+      overflow: hidden;
+    }
+
+    .shop-button::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: -120%;
+
+      width: 80%;
+      height: 100%;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+      );
+
+      transform: skewX(-20deg);
+
+      animation: buttonShine 3s infinite;
+    }
+
+    @keyframes buttonShine {
+      0% {
+        left: -120%;
+      }
+
+      45%,100% {
+        left: 140%;
+      }
+    }
+
+    .shop-button:hover {
+      transform: translateY(-5px) scale(1.03);
+
+      box-shadow:
+        0 20px 45px rgba(255,50,145,.36);
+    }
+
+    .contact-button {
+      color: #128a45;
+
+      background: white;
+
+      border: 1px solid #d7f3e2;
+
+      box-shadow:
+        0 10px 25px rgba(18,138,69,.08);
+    }
+
+    .contact-button:hover {
+      transform: translateY(-5px);
+      background: #f3fff8;
+    }
+
+    .discover-button {
+      color: #d52f7c;
+
+      background: white;
+
+      border: 1px solid #ffd1e5;
+    }
+
+    .discover-button:hover {
+      transform: translateY(-4px);
+      background: #fff0f7;
+    }
+
+    /* ==============================
+       FLOATING CARDS
+    ============================== */
+
+    .floating-card {
+      position: absolute;
+
+      padding: 13px 18px;
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,.78);
+
+      backdrop-filter: blur(12px);
+
+      box-shadow:
+        0 15px 40px rgba(70,25,55,.08);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      animation:
+        floating 5s ease-in-out infinite;
+    }
+
+    .floating-card.one {
+      left: 7%;
+      top: 37%;
+    }
+
+    .floating-card.two {
+      right: 7%;
+      top: 50%;
+
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floating {
+      0%,100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(2deg);
+      }
+    }
+
+    /* ==============================
+       FEATURES
+    ============================== */
+
+    .features {
+      padding: 90px 7%;
+
+      background: white;
+    }
+
+    .section-heading {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 5vw, 50px);
+
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: #806b77;
+    }
+
+    .feature-grid {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 33px 24px;
+
+      text-align: center;
+
+      border-radius: 26px;
+
+      background: #fff8fc;
+
+      border: 1px solid #ffe0ee;
+
+      transition: .35s;
+    }
+
+    .feature:hover {
+      transform: translateY(-9px);
+
+      box-shadow:
+        0 20px 45px rgba(255,60,145,.12);
+    }
+
+    .feature-icon {
+      width: 62px;
+      height: 62px;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 21px;
+
+      background: linear-gradient(
+        135deg,
+        #ff4c9b,
+        #9740ff
+      );
+
+      color: white;
+
+      font-size: 27px;
+    }
+
+    .feature h3 {
+      margin-bottom: 9px;
+    }
+
+    .feature p {
+      color: #806b77;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       CONTACT SECTION
+    ============================== */
+
+    .contact {
+      padding: 80px 7%;
+
+      background: #fff7fb;
+
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 800px;
+
+      margin: auto;
+
+      padding: 45px 25px;
+
+      border-radius: 30px;
+
+      background: white;
+
+      border: 1px solid #ffe0ee;
+
+      box-shadow:
+        0 20px 60px rgba(255,60,145,.09);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(30px,5vw,48px);
+
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #806b77;
+
+      margin-bottom: 25px;
+    }
+
+    .number {
+      display: inline-block;
+
+      margin-bottom: 25px;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      color: #e33284;
+    }
+
+    /* ==============================
+       CTA
+    ============================== */
+
+    .cta {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 100px 7%;
+
+      text-align: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff4b99,
+          #843aff
+        );
+    }
+
+    .cta h2 {
+      position: relative;
+      z-index: 2;
+
+      font-size: clamp(35px,6vw,58px);
+
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      position: relative;
+      z-index: 2;
+
+      opacity: .92;
+
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      position: relative;
+      z-index: 2;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      padding: 17px 30px;
+
+      color: #128a45;
+
+      background: white;
+
+      border-radius: 50px;
+
+      text-decoration: none;
+
+      font-weight: 900;
+
+      box-shadow:
+        0 14px 35px rgba(0,0,0,.16);
+
+      transition: .3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .cta::before,
+    .cta::after {
+      content: "";
+
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      border: 2px solid rgba(255,255,255,.12);
+    }
+
+    .cta::before {
+      left: -100px;
+      top: -120px;
+    }
+
+    .cta::after {
+      right: -100px;
+      bottom: -140px;
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+      padding: 27px 7%;
+
+      text-align: center;
+
+      background: #25101d;
+
+      color: #cdbbc5;
+
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #ff67aa;
+    }
+
+    /* ==============================
+       FLOATING HEARTS
+    ============================== */
+
+    .heart {
+      position: fixed;
+
+      bottom: -30px;
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      color: #ff4f9a;
+
+      opacity: .75;
+
+      animation:
+        heartRise linear forwards;
+    }
+
+    @keyframes heartRise {
+      from {
+        transform:
+          translateY(0)
+          rotate(0deg)
+          scale(.8);
+
+        opacity: .8;
+      }
+
+      to {
+        transform:
+          translateY(-110vh)
+          rotate(360deg)
+          scale(1.2);
+
+        opacity: 0;
+      }
+    }
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 750px) {
+
+      nav {
+        padding: 14px 5%;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .nav-shop {
+        padding: 9px 14px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 135px 6% 80px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        padding: 75px 6%;
+      }
+
+      .contact {
+        padding: 70px 6%;
+      }
+
+      .cta {
+        padding: 80px 6%;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .hero h1 {
+        font-size: 51px;
+      }
+
+      .name-card {
+        gap: 8px;
+
+        padding:
+          9px
+          16px
+          9px
+          9px;
+      }
+
+      .profile-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+      }
+
+      .person-name {
+        font-size: 14px;
+      }
+
+      .sparkle {
+        font-size: 13px;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 310px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==============================
+       BACKGROUND
+  ============================== -->
+
+  <div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+  </div>
+
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+
+  <nav>
+
+    <a href="#" class="logo">
+      Girls <span>Choice</span>
+    </a>
+
+    <a
+      href="https://wa.me/c/923706903659"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-shop"
+    >
+      🛍️ Shop Now
+    </a>
+
+  </nav>
+
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+
+  <section class="hero">
+
+    <div class="floating-card one">
+      💖 Girls' Favorites
+    </div>
+
+    <div class="floating-card two">
+      ✨ New Collection
+    </div>
+
+
+    <div class="hero-content">
+
+      <div class="top-badge">
+        ✨ YOUR STYLE • YOUR CHOICE
+      </div>
+
+
+      <h1>
+        Girls Choice
+      </h1>
+
+
+      <!-- KIRAN RAMZAN -->
+
+      <div class="name-area">
+
+        <div class="name-card">
+
+          <span class="sparkle">
+            ✦
+          </span>
+
+          <div class="profile-icon">
+            👩🏻‍💼
+          </div>
+
+          <span class="person-name">
+            Kiran Ramzan
+          </span>
+
+          <span class="sparkle">
+            ✦
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p class="hero-description">
+        Discover beautiful products picked with love.
+        Explore our latest collection and shop easily
+        through WhatsApp.
+      </p>
+
+
+      <!-- HERO BUTTONS -->
+
+      <div class="buttons">
+
+        <!-- SHOP CATALOG -->
+        <a
+          href="https://wa.me/c/923706903659"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button shop-button"
+        >
+          🛍️ Open Shop
+        </a>
+
+
+        <!-- CONTACT KIRAN -->
+        <a
+          href="https://wa.me/923703690659"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button contact-button"
+        >
+          💬 Contact Kiran
+        </a>
+
+
+        <a
+          href="#about"
+          class="button discover-button"
+        >
+          Discover More ↓
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       FEATURES
+  ============================== -->
+
+  <section class="features" id="about">
+
+    <div class="section-heading">
+
+      <h2>
+        Why Girls Choice?
+      </h2>
+
+      <p>
+        Simple shopping, beautiful choices 💕
+      </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🛍️
+        </div>
+
+        <h3>
+          Beautiful Collection
+        </h3>
+
+        <p>
+          Find products selected especially
+          for girls who love style and quality.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          💬
+        </div>
+
+        <h3>
+          Easy WhatsApp Shopping
+        </h3>
+
+        <p>
+          Browse the WhatsApp catalog and
+          choose your favorite products easily.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          💖
+        </div>
+
+        <h3>
+          Made With Love
+        </h3>
+
+        <p>
+          Girls Choice is all about discovering
+          things you'll love.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       CONTACT KIRAN
+  ============================== -->
+
+  <section class="contact">
+
+    <div class="contact-box">
+
+      <h2>
+        Talk With Kiran 💕
+      </h2>
+
+      <p>
+        Have a question? Contact Kiran Ramzan
+        directly on WhatsApp.
+      </p>
+
+      <div class="number">
+        +92 370 3690659
+      </div>
+
+      <br>
+
+      <a
+        href="https://wa.me/923703690659"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button contact-button"
+      >
+        💬 Contact Kiran Ramzan
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       FINAL CTA
+  ============================== -->
+
+  <section class="cta">
+
+    <h2>
+      Ready to Shop? 💖
+    </h2>
+
+    <p>
+      Visit our WhatsApp catalog and
+      discover your next favorite item.
+    </p>
+
+    <a
+      href="https://wa.me/c/923706903659"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="cta-button"
+    >
+      🛍️ Open WhatsApp Catalog
+    </a>
+
+  </section>
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
+  <footer>
+
+    © <span id="year"></span>
+
+    <strong>
+      Girls Choice
+    </strong>
+
+    — Kiran Ramzan 💖
+
+  </footer>
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
+  <script>
+
+    /* Current Year */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* Floating Hearts */
+
+    function createHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className = "heart";
+
+      const symbols = [
+        "♥",
+        "♡",
+        "💗",
+        "💖",
+        "✨"
+      ];
+
+      heart.textContent =
+        symbols[
+          Math.floor(
+            Math.random() * symbols.length
+          )
+        ];
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (12 + Math.random() * 15) + "px";
+
+      heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(function() {
+        heart.remove();
+      }, 10000);
+    }
+
+
+    setInterval(createHeart, 1200);
+
+  </script>
+
+</body>
+</html>
